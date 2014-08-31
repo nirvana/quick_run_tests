@@ -1,4 +1,4 @@
-# quick_run_tests  Quick! Run some Tests!
+# Quick! Run Tests!
 
 A very simple project to quickly generate a simple load test, and collect statistics.
 
