@@ -1,7 +1,7 @@
 defmodule Qrt do
 
   def scenario do
-    %{iterations: nil, paths: nil, rest_time: 10_000, f_test: nil}
+    %{iterations: nil, paths: nil, rest_time: 10_000, f_test: nil, timeout: 60_000}
   end
 
   def results do
@@ -44,7 +44,7 @@ defmodule Qrt do
         test.(scenario)
       end)
     end)
-    |> Enum.map(&Task.await/1)
+    |> Enum.map(fn(x)-> Task.await(x,scenario[:timeout]) end)
     |> List.flatten
     |> Enum.reduce(accumulator, fn(test, acc)-> #accumulates the results
         success = cond do

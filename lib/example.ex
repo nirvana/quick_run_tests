@@ -5,6 +5,7 @@ defmodule Example do
     iterations: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
     paths: nil,
     rest_time: 1_000,
+    timeout: 1_000,
     f_test: &ping_localhost/1   #takes scenario as only parameter
     }
   end
